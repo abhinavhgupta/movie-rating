@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     let movies: MovieData[];
     this.store.pipe(select('reducers')).subscribe((as: any) => {
-      console.log('AppComponent ', as.movieData);
+
       this.mov = as.movieData.sort((a, b) => {
         return a.rating - b.rating
       })
@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
   }
 
   updateRating(name, rating, index) {
-    console.log(name, rating, index);
+
     this.updatedList[index] = {
       rating: rating,
       name: name

@@ -18,7 +18,7 @@ export class LoadMovies implements Action {
     readonly type = MovieActionTypes.LoadMovie;
 
     constructor(readonly payload: MovieData[]) {
-        console.log('payload', payload);
+
     }
 }
 
