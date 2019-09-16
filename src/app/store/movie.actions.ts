@@ -18,7 +18,6 @@ export class LoadMovies implements Action {
     readonly type = MovieActionTypes.LoadMovie;
 
     constructor(readonly payload: MovieData[]) {
-
     }
 }
 
@@ -26,6 +25,7 @@ export class UpdateMovies implements Action {
     readonly type = MovieActionTypes.UpdateMovie;
 
     constructor(readonly payload: MovieData[]) {
+        //   console.log('payload UpdateMovies', payload)
     }
 }
 

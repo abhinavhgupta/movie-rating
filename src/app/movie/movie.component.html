@@ -1,0 +1,9 @@
+<div [formGroup]="form" class="row">
+    <div class="col">
+        <span>{{movie.name}}</span>
+    </div>
+    <div class="col">
+        <input class="form-control-sm ml-1" [formControlName]="movie.name" #rating value="{{movie.rating}}">
+    </div>
+
+</div>

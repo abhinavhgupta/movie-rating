@@ -6,12 +6,15 @@
 
 </div>
 <h2>Here are some Movies </h2>
-<div class="container">
-  <div class="form-row" *ngFor="let movie of mov;let i =index">
-    <span>{{movie.name}}</span>
-    <input class="form-control-sm ml-1" #rating value="{{movie.rating}}">
-    <button type="button" class="ml-1 btn btn-outline-primary btn-sm"
-      (click)="updateRating(movie.name,rating.value,i)">update</button>
 
-  </div>
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="randomRating()">
+    <div *ngFor="let movie of mov;let i =index">
+      <app-movie [movie]="movie" [index]="i" [updatedList]="updatedList" [form]="userForm"></app-movie>
+    </div>
+
+    <button type="submit" class=" btn btn-outline-primary btn-sm">Random Rating</button>
+    <button type="button" (click)="reset()" class="ml-1 btn btn-outline-primary btn-sm">Reset</button>
+
+  </form>
 </div>
